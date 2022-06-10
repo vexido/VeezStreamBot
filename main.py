@@ -17,5 +17,6 @@ async def start_bot():
     await bot.stop()
 
 
-loop = asyncio.get_event_loop_policy().get_event_loop()
-loop.run_until_complete(start_bot())
+event = asyncio.get_event_loop_policy()
+event_loop = event.new_event_loop()
+event_loop.run_until_complete(start_bot())
